@@ -14,10 +14,6 @@
 
 using namespace std;
 
-Fraction::Fraction(const Fraction &f){
-
-}
-
 Fraction::Fraction(){
     //Fraction::numerator = 0;
     //Fraction::denominator = 0;
@@ -28,7 +24,6 @@ Fraction::Fraction(int num, int den) {
     Fraction::numerator = num;
     Fraction::denominator = den;
 
-    
 }
 
 int Fraction::getNumerator() {

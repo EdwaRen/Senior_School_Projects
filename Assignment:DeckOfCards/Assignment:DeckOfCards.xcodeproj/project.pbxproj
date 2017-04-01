@@ -252,6 +252,7 @@
 				1F71AB241E537B2900AE835F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

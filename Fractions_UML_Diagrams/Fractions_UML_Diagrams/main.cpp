@@ -66,7 +66,6 @@ int main(int argc, const char * argv[]) {
     
     Fraction out;
     
-    out = Fraction();
 
     out = out.add(f, s);
     

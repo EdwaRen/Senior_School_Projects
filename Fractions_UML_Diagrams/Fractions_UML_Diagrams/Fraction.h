@@ -19,7 +19,6 @@ public:
     
     Fraction();
     Fraction(int num, int den);
-    Fraction(Fraction const &f);
 
     int numOfFractions;
     int getNumerator();
