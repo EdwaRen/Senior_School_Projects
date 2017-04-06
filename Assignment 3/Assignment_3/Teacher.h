@@ -32,8 +32,10 @@ class Teacher: public Person {
     int COURSE_NUM = 4;
     //Course mySchedule[4];
     Course *tSchedule = new Course[COURSE_NUM];
-    int CLASS_SIZE = 30;
+    int CLASS_SIZE = 80;
     Student *myClass = new Student[CLASS_SIZE];
+    virtual bool isValidID(string idf) const;
+
     
     public:
     Teacher();
@@ -43,7 +45,6 @@ class Teacher: public Person {
     string getEmployeeID();
     void setTeachables(string t);
     void setEmployeeID(string idf);
-    virtual bool isValidID(string idf) const;
     void markStudentLate(Student& s);
     string toString();
     

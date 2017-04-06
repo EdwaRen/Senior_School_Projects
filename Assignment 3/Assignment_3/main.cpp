@@ -26,7 +26,8 @@ int main(int argc, const char * argv[]) {
     c.StudentsEnroll();
     c.TeachersHire();
     c.CoursesCreate();
-    c.MemberAutoSchedule();
+    c.MemberAutoSchedule(); //Schedule courses for students and teachers.
+    c.crackDownOnStudents(); //Randomly marks students late
     cout << "Printing Students: \n"<< c.toStringStudent() << endl;
     cout << "Printing Teachers: \n"<< c.toStringTeacher() << endl;
     cout << "Printing Courses: \n"<<c.toStringCourse() << endl;

@@ -51,6 +51,8 @@ public:
     string toStringStudent();
     string toStringTeacher();
     string toStringCourse();
+    
+    void crackDownOnStudents();
 
     
     

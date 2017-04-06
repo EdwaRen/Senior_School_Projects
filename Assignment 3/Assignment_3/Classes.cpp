@@ -14,6 +14,8 @@
 
 class Course;
 
+int mySList[500];
+
 
 
 /*
@@ -67,7 +69,8 @@ void School::TeachersHire() {
     
     string Teachables[4] = {"Sciences", "Mathematics", "Finances", "Commerce"};
     string Teachables2[4] = {"Humanities", "Physical Education", "Languages", "Arts",};
-
+    
+    int count = 0;
     for (int x = 0; x < TEACHER_POP; x++) {
         stringstream a, b, myAddress, d, e;
         a << sNamef1[rand()%4];
@@ -78,6 +81,15 @@ void School::TeachersHire() {
 
         TeacherPop[x] = Teacher(a.str(), b.str(), myAddress.str(), d.str(), e.str());
         TeacherPop[x].setSchedule(CoursePop[(x*4)], CoursePop[(x*4)+1], CoursePop[(x*4)+2], CoursePop[(x*4)+3]);
+        
+        for (int i = 0; i < 80; count++) {
+            i++;
+            if (count >= SCHOOL_POP) {
+                count = count % SCHOOL_POP;
+            }
+            //int c = (xCopy*25) + i;
+            TeacherPop[x].addToClass(StudentPop[count], i);
+        }
         
         
     }
@@ -115,19 +127,42 @@ void School::CoursesCreate() {
             
             int c = (xCopy*25) + i;
             CoursePop[x].addStuClass(StudentPop[(xCopy*20)+i], i);
+            
+            
         }
         
     }
 }
 
 void School::MemberAutoSchedule() {
-    for (int x = 0; x < COURSE_POP; x++) {
-        CoursePop[x].setCTeacher(TeacherPop[(int)floor(x/4)]);
-    }
     
     for (int x = 0; x < TEACHER_POP; x++) {
         TeacherPop[x].setSchedule(CoursePop[(x*4)], CoursePop[(x*4)+1], CoursePop[(x*4)+2], CoursePop[(x*4)+3]);
     }
+    for (int x = 0; x < COURSE_POP; x++) {
+        stringstream a;
+        a << TeacherPop[(int)floor(x/4)].getFirstName() << " " << TeacherPop[(int)floor(x/4)].getLastName();
+        CoursePop[x].setCourseTeahcer(a.str());
+        
+    }
+    
+    int count = 0;
+    for (int x = 0; x < SCHOOL_POP; x++) {
+        
+        stringstream a, b, c, d;
+        
+        if (x%25 == 0) {
+            count ++;
+        }
+        a << CoursePop[count].getCLevel() << " " << CoursePop[count].getCName();
+        b << CoursePop[count+20].getCLevel() << " " << CoursePop[count+20].getCName();
+        c << CoursePop[count+40].getCLevel() << " " << CoursePop[count+40].getCName();
+        d << CoursePop[count+60].getCLevel() << " " << CoursePop[count+60].getCName();
+
+       
+        StudentPop[x].setSchedule(a.str(),b.str(), c.str(), d.str() );
+    }
+    
     /*
      cout << toStringTeacher() << endl;
     for (int x = 0; x < COURSE_POP; x++) {
@@ -138,9 +173,13 @@ void School::MemberAutoSchedule() {
 }
 
 string School::toStringStudent() {
+    for (int x = 0; x < 500; x++) {
+        mySList[x] = x;
+    }
+    random_shuffle(&mySList[0], &mySList[499]);
     stringstream a;
     for (int x = 0; x < SCHOOL_POP; x ++) {
-        a << StudentPop[x].toString() << "\n";
+        a << StudentPop[mySList[x]].toString() << "\n";
     }
     return a.str();
 }
@@ -157,6 +196,16 @@ string School::toStringCourse() {
         a << CoursePop[x].toStringClass() << "\n";
     }
     return a.str();
+}
+
+void School::crackDownOnStudents() {
+    
+    for (int x = 0; x < TEACHER_POP; x++) {
+        for (int i = 0; i < 100; i++ ){
+            TeacherPop[x].markStudentLate(StudentPop[rand()%SCHOOL_POP]);
+        }
+    }
+    
 }
 
 

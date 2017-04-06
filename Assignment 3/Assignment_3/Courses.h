@@ -27,6 +27,7 @@ class Course {
     private:
     string cLevel = "Unassigned";
     string cName = "Unassigned";
+    string courseTeacher;
     Teacher* cTeacher;
     string cCode;
     int CLASS_SIZE = 25;
@@ -42,10 +43,12 @@ class Course {
     void setCLevel(string a);
     void setCName (string a);
     void setCTeacher (Teacher a);
+    void setCourseTeahcer (string a);
     void setCCode(string a);
     string getCLevel();
     string getCName();
     Teacher& getCTeacher();
+    string getCourseTeacher();
     string getCCode();
     string getCStudents();
     

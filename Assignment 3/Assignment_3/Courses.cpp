@@ -37,6 +37,10 @@ void Course::setCTeacher (Teacher a) {
     //cTeacher->setEmployeeID(a.getEmployeeID());
     
 }
+void Course::setCourseTeahcer(string a) {
+    courseTeacher = a;
+}
+
 void Course::setCCode(string a){
     cCode = a;
 }
@@ -48,6 +52,9 @@ string Course::getCName(){
 }
 Teacher& Course::getCTeacher() {
     return *cTeacher;
+}
+string Course::getCourseTeacher() {
+    return courseTeacher;
 }
 string Course::getCCode() {
     return cCode;
@@ -65,7 +72,7 @@ string Course::toStringClass() {
     //cout << getCTeacher().getLastName() << endl;
     stringstream a;
     //getCTeacher();
-    a << "\nCourse Name: " << getCLevel() << " " << getCName() <<", Teacher: " << getCTeacher().getLastName()   << " " << ", Course Code: " << getCCode() << "\n   Students: "<< "\t" << getCStudents();
+    a << "\nCourse Name: " << getCLevel() << " " << getCName() <<", Teacher: " << getCourseTeacher()   << " " << ", Course Code: " << getCCode() << "\n   Students: "<< "\t" << getCStudents();
     
     
     return a.str();

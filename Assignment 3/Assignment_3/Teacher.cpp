@@ -45,6 +45,14 @@ void Teacher::markStudentLate(Student& s) {
 string Teacher::toString() {
     stringstream a;
     a << getFirstName() << " " << getLastName() << ", Address: " << getAddress() << ", Teachables: " << teachables << ", ID: " << employeeID << endl <<getSchedule() << endl;
+    /*
+    a << "     Students: ";
+    for (int x = 0; x < 80; x++) {
+        a << myClass[x].getFirstName() << " " << myClass[x].getLastName() << ", ";
+    }
+    a << endl << endl;
+     */
+    
     return a.str();
 }
 bool Teacher::isValidID(string idf) const{

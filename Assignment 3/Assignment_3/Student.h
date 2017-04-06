@@ -23,7 +23,7 @@ private:
     string studentID = "a";
     int numLates = 0;
     string schedule[4] = {"Crippling Depression SL", "How to Get Into Algonquin U", "Decreasing Procrastination Ski...", "Due tomorrow? Do tomorrow 101"};
-    
+    virtual bool isValidID(string idf) const;
 public:
     Student();
     Student(string f, string l, string a, int g, string idf);
@@ -34,7 +34,7 @@ public:
     void setGrade(int n);
     void setStudentID(string s);
     void addLate();
-    virtual bool isValidID(string idf) const;
+    
     string toString();
     
     virtual string getSchedule() const;
