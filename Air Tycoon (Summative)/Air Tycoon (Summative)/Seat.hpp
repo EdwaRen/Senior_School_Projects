@@ -15,7 +15,7 @@
 class Seat: public BasicInfo {
 private:
     int seatNumber;
-    bool seatAvail = false;
+    bool seatAvail = true;
 public:
     Seat();
     Seat(int SeatNumber, bool SeatAvail);
@@ -24,7 +24,7 @@ public:
     bool getSeatAvail();
     void setSeatNumber(int a);
     void setSeatAvail(bool a);
-    virtual string toString();
+    string toString();
     
 };
 

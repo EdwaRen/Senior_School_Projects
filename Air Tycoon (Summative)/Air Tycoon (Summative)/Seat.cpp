@@ -44,7 +44,7 @@ string Seat::toString() {
     } else {
         sAvail = "No";
     }
-    b << "Seat No." << seatNumber << ", Availiblility: " << sAvail << ", Passenger Name: " << BasicInfo::getName() << ", Contact: " << BasicInfo::getPhoneNumber() << ", Address: " << BasicInfo::getAddress();
+    b <<  "Passenger Name: " << BasicInfo::getName() << ", Contact: " << BasicInfo::getPhoneNumber() << ", Address: " << BasicInfo::getAddress() <<", Seat No." << seatNumber << ", Availiblility: " << sAvail ;
     
     return b.str();
 }

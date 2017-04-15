@@ -36,11 +36,21 @@ string Flight::displaySeatsAvailible() {
     stringstream a;
     for (int x = 0; x < SEAT_NUM; x++) {
         if (flightSeats[x].getSeatAvail() == true) {
-            
+            a << "Seat: " << flightSeats[x].getSeatNumber() << " is availible" << endl;
         }
     }
     return a.str();
     
+}
+string Flight::displayPassengerInfo() {
+    stringstream a;
+    a << "Passengers: " << endl;
+    for (int x = 0; x < SEAT_NUM; x++) {
+        if (flightSeats[x].getSeatAvail() == false) {
+            a << "    Name: " << flightSeats[x].getName() << ", Address: " << flightSeats[x].getAddress() << ", Phone Number: " << flightSeats[x].getPhoneNumber();
+        }
+    }
+    return a.str();
 }
 
 

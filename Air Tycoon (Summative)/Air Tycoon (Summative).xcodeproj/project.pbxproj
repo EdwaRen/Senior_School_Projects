@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F1645B91E9FF63800CA637C /* Passenger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F1645B71E9FF63800CA637C /* Passenger.cpp */; };
 		1FBF80801E9EA48000A72444 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF807F1E9EA48000A72444 /* main.cpp */; };
 		1FBF80881E9EA4B300A72444 /* BasicInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF80861E9EA4B300A72444 /* BasicInfo.cpp */; };
 		1FBF808B1E9EA74900A72444 /* Seat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF80891E9EA74900A72444 /* Seat.cpp */; };
@@ -26,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F1645B71E9FF63800CA637C /* Passenger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Passenger.cpp; sourceTree = "<group>"; };
+		1F1645B81E9FF63800CA637C /* Passenger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Passenger.hpp; sourceTree = "<group>"; };
 		1FBF807C1E9EA48000A72444 /* Air Tycoon (Summative) */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Air Tycoon (Summative)"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBF807F1E9EA48000A72444 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1FBF80861E9EA4B300A72444 /* BasicInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BasicInfo.cpp; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 				1FBF808A1E9EA74900A72444 /* Seat.hpp */,
 				1FBF80861E9EA4B300A72444 /* BasicInfo.cpp */,
 				1FBF80871E9EA4B300A72444 /* BasicInfo.hpp */,
+				1F1645B71E9FF63800CA637C /* Passenger.cpp */,
+				1F1645B81E9FF63800CA637C /* Passenger.hpp */,
 			);
 			path = "Air Tycoon (Summative)";
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F1645B91E9FF63800CA637C /* Passenger.cpp in Sources */,
 				1FBF808B1E9EA74900A72444 /* Seat.cpp in Sources */,
 				1FBF808E1E9EAE5E00A72444 /* Flight.cpp in Sources */,
 				1FBF80881E9EA4B300A72444 /* BasicInfo.cpp in Sources */,
@@ -269,6 +275,7 @@
 				1FBF80851E9EA48000A72444 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
