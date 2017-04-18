@@ -20,9 +20,8 @@ Seat::Seat(int SeatNumber, bool SeatAvail) {
 Seat::Seat(int SeatNumber, bool SeatAvail, BasicInfo a) {
     seatNumber = SeatNumber;
     seatAvail = SeatAvail;
-    BasicInfo::setName(a.getName());
-    BasicInfo::setAddress(a.getAddress());
-    BasicInfo::setPhoneNumber(a.getPhoneNumber());
+    seatInfo = a;
+    
 }
 int Seat::getSeatNumber() {
     return seatNumber;
@@ -30,11 +29,17 @@ int Seat::getSeatNumber() {
 bool Seat::getSeatAvail() {
     return seatAvail;
 }
+BasicInfo Seat::getSeatInfo() {
+    return seatInfo;
+}
 void Seat::setSeatNumber(int a) {
     seatNumber = a;
 }
 void Seat::setSeatAvail(bool a) {
     seatAvail = a;
+}
+void Seat::setSeatInfo(BasicInfo a) {
+    seatInfo = a;
 }
 string Seat::toString() {
     stringstream b;
@@ -44,7 +49,7 @@ string Seat::toString() {
     } else {
         sAvail = "No";
     }
-    b <<  "Passenger Name: " << BasicInfo::getName() << ", Contact: " << BasicInfo::getPhoneNumber() << ", Address: " << BasicInfo::getAddress() <<", Seat No." << seatNumber << ", Availiblility: " << sAvail ;
+    b <<  "Passenger Name: " << seatInfo.getName() << ", Contact: " << seatInfo.getPhoneNumber() << ", Address: " << seatInfo.getAddress() <<", Seat No." << seatNumber << ", Availiblility: " << sAvail ;
     
     return b.str();
 }

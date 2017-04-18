@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1F1645B91E9FF63800CA637C /* Passenger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F1645B71E9FF63800CA637C /* Passenger.cpp */; };
+		1FA8E5031EA643E800816002 /* Attendant.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8E5011EA643E800816002 /* Attendant.cpp */; };
+		1FA8E5051EA662B300816002 /* Constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8E5041EA662B300816002 /* Constants.cpp */; };
 		1FBF80801E9EA48000A72444 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF807F1E9EA48000A72444 /* main.cpp */; };
 		1FBF80881E9EA4B300A72444 /* BasicInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF80861E9EA4B300A72444 /* BasicInfo.cpp */; };
 		1FBF808B1E9EA74900A72444 /* Seat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF80891E9EA74900A72444 /* Seat.cpp */; };
@@ -29,6 +31,9 @@
 /* Begin PBXFileReference section */
 		1F1645B71E9FF63800CA637C /* Passenger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Passenger.cpp; sourceTree = "<group>"; };
 		1F1645B81E9FF63800CA637C /* Passenger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Passenger.hpp; sourceTree = "<group>"; };
+		1FA8E5011EA643E800816002 /* Attendant.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Attendant.cpp; sourceTree = "<group>"; };
+		1FA8E5021EA643E800816002 /* Attendant.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Attendant.hpp; sourceTree = "<group>"; };
+		1FA8E5041EA662B300816002 /* Constants.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Constants.cpp; sourceTree = "<group>"; };
 		1FBF807C1E9EA48000A72444 /* Air Tycoon (Summative) */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Air Tycoon (Summative)"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBF807F1E9EA48000A72444 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1FBF80861E9EA4B300A72444 /* BasicInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BasicInfo.cpp; sourceTree = "<group>"; };
@@ -78,6 +83,9 @@
 				1FBF80871E9EA4B300A72444 /* BasicInfo.hpp */,
 				1F1645B71E9FF63800CA637C /* Passenger.cpp */,
 				1F1645B81E9FF63800CA637C /* Passenger.hpp */,
+				1FA8E5011EA643E800816002 /* Attendant.cpp */,
+				1FA8E5021EA643E800816002 /* Attendant.hpp */,
+				1FA8E5041EA662B300816002 /* Constants.cpp */,
 			);
 			path = "Air Tycoon (Summative)";
 			sourceTree = "<group>";
@@ -141,10 +149,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F1645B91E9FF63800CA637C /* Passenger.cpp in Sources */,
+				1FA8E5051EA662B300816002 /* Constants.cpp in Sources */,
 				1FBF808B1E9EA74900A72444 /* Seat.cpp in Sources */,
 				1FBF808E1E9EAE5E00A72444 /* Flight.cpp in Sources */,
 				1FBF80881E9EA4B300A72444 /* BasicInfo.cpp in Sources */,
 				1FBF80801E9EA48000A72444 /* main.cpp in Sources */,
+				1FA8E5031EA643E800816002 /* Attendant.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

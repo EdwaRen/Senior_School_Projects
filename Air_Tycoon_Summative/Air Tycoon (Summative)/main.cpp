@@ -11,8 +11,12 @@
 #include "Seat.hpp"
 #include "Flight.hpp"
 #include "Passenger.hpp"
+#include "Attendant.hpp"
+#include "Constants.cpp"
+
 
 int main(int argc, const char * argv[]) {
+    
     // insert code here...
     BasicInfo a;
     a = BasicInfo("Helllo", "World Avenue", "32145678");
@@ -20,19 +24,18 @@ int main(int argc, const char * argv[]) {
     Seat b;
     b = Seat(423564, true, a);
     
-    cout << b.getName() << " " <<b.getSeatAvail() << endl <<b.toString() << endl;
+    cout << b.getSeatInfo().getName() << " " <<b.getSeatAvail() << endl <<b.toString() << endl;
     
     Flight c;
-    c = Flight("New York");
-    for (int x = 0; x < 10; x++) {
-        Seat a;
-        c.setFlightSeat(a, x);
-    }
+    c = Flight("New York", 1);
+   
+    cout << c.displaySeatsAvailible() << endl <<c.displayPassengerInfo() <<endl;
     
     Passenger d;
-    d = Passenger(a, b, c, "Boston");
+    
+    //d = Passenger(a, b, c, "Boston");
     
     
-    std::cout << "Hello, World!\n";
+    std::cout << "\nHello, World!\n";
     return 0;
 }

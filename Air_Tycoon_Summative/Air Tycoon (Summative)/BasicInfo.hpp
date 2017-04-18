@@ -12,10 +12,13 @@
 #include <stdio.h>
 
 #include <string>
+//#include "Constants.cpp"
 
 using namespace std;
 
+
 class BasicInfo {
+
     
 private:
     string name;

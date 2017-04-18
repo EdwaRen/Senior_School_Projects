@@ -15,13 +15,14 @@
 class Flight {
     
 private:
+    int FLIGHT_TAG = 0;
     int SEAT_NUM = 10;
     Seat *flightSeats = new Seat[SEAT_NUM];
     string flightDestination;
     
 public:
     Flight();
-    Flight(string destination);
+    Flight(string destination, int flightTag);
     Seat& getFlightSeat(int a);
     string getFlightDestination();
     void setFlightSeat(Seat& a, int b);

@@ -14,11 +14,20 @@ using namespace  std;
 Flight::Flight() {
     for (int x = 0; x < SEAT_NUM; x++) {
         Seat a;
+        BasicInfo b;
+        a = Seat((FLIGHT_TAG*100) +1, true, b);
         flightSeats[x] = a;
     }
 }
-Flight::Flight(string destination) {
+Flight::Flight(string destination, int flightTag) {
+    FLIGHT_TAG = flightTag;
     flightDestination = destination;
+    for (int x = 0; x < SEAT_NUM; x++) {
+        Seat a;
+        BasicInfo b;
+        a = Seat((FLIGHT_TAG*100) +x, true, b);
+        flightSeats[x] = a;
+    }
 }
 Seat& Flight::getFlightSeat(int a) {
     return flightSeats[a];
@@ -47,7 +56,7 @@ string Flight::displayPassengerInfo() {
     a << "Passengers: " << endl;
     for (int x = 0; x < SEAT_NUM; x++) {
         if (flightSeats[x].getSeatAvail() == false) {
-            a << "    Name: " << flightSeats[x].getName() << ", Address: " << flightSeats[x].getAddress() << ", Phone Number: " << flightSeats[x].getPhoneNumber();
+            a << "    Name: " << flightSeats[x].getSeatInfo().getName() << ", Address: " << flightSeats[x].getSeatInfo().getAddress() << ", Phone Number: " << flightSeats[x].getSeatInfo().getPhoneNumber();
         }
     }
     return a.str();

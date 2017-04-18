@@ -12,8 +12,10 @@
 #include <stdio.h>
 #include "BasicInfo.hpp"
 
-class Seat: public BasicInfo {
+class Seat:public BasicInfo {
 private:
+    int SEAT_NUM = 10;
+    BasicInfo seatInfo;
     int seatNumber;
     bool seatAvail = true;
 public:
@@ -22,8 +24,10 @@ public:
     Seat(int SeatNumber, bool SeatAvail, BasicInfo a);
     int getSeatNumber();
     bool getSeatAvail();
+    BasicInfo getSeatInfo();
     void setSeatNumber(int a);
     void setSeatAvail(bool a);
+    void setSeatInfo(BasicInfo a);
     string toString();
     
 };
