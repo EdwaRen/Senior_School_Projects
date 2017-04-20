@@ -15,7 +15,7 @@ using namespace std;
 
 Passenger::Passenger() {}
 
-Passenger::Passenger(BasicInfo a, int pSeatNum, Flight pFlight, string pPreference) {
+Passenger::Passenger(BasicInfo& a, int pSeatNum, Flight& pFlight, string pPreference) {
     myInfo = a;
     mySeatNum  = pSeatNum;
     myFlight = pFlight;
@@ -25,13 +25,13 @@ Passenger::Passenger(BasicInfo a, int pSeatNum, Flight pFlight, string pPreferen
 string Passenger::getMyPreference() {
     return myPreference;
 }
-Seat Passenger::getMySeat() {
+Seat& Passenger::getMySeat() {
     return myFlight.getFlightSeat(mySeatNum);
 }
-Flight Passenger::getMyFlight() {
+Flight& Passenger::getMyFlight() {
     return myFlight;
 }
-BasicInfo Passenger::getMyInfo() {
+BasicInfo& Passenger::getMyInfo() {
     return myInfo;
 }
 int Passenger::getMySeatNum() {
@@ -46,10 +46,10 @@ void Passenger::setMySeat(int b) {
 
     mySeatNum = b;
 }
-void Passenger::setMyFlight(Flight a) {
+void Passenger::setMyFlight(Flight& a) {
     myFlight = a;
 }
-void Passenger::setMyInfo(BasicInfo a) {
+void Passenger::setMyInfo(BasicInfo& a) {
     myInfo = a;
 }
 void Passenger::setMySeatNum(int a) {

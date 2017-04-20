@@ -35,6 +35,8 @@ public:
     void setName(string a);
     void setAddress(string a);
     void setPhoneNumber(string a);
+    
+    string toString();
 
     
 };

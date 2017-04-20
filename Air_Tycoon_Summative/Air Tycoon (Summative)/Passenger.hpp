@@ -31,16 +31,16 @@ private:
     
 public:
     Passenger();
-    Passenger(BasicInfo a, int pSeatNum, Flight pFlight, string pPreference);
+    Passenger(BasicInfo& a, int pSeatNum, Flight& pFlight, string pPreference);
     string getMyPreference();
-    Seat getMySeat();
-    BasicInfo getMyInfo();
-    Flight getMyFlight();
+    Seat& getMySeat();
+    BasicInfo& getMyInfo();
+    Flight& getMyFlight();
     int getMySeatNum();
     void setMyPreference(string a);
     void setMySeat(int b);
-    void setMyFlight(Flight a); //Also the buy ticket function, needs to be called in conjunction with setMySeat due to lazy programming
-    void setMyInfo(BasicInfo a);
+    void setMyFlight(Flight& a); //Also the buy ticket function, needs to be called in conjunction with setMySeat due to lazy programming
+    void setMyInfo(BasicInfo& a);
     void setMySeatNum(int a);
     string toString();
 

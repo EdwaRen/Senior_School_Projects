@@ -6,6 +6,8 @@
 //  Copyright © 2017 Eddie of the House of Ren. All rights reserved.
 //
 
+#include <iostream>
+#include <iomanip>
 #include "Seat.hpp"
 #include <string>
 #include <sstream>
@@ -17,7 +19,7 @@ Seat::Seat(int SeatNumber, bool SeatAvail) {
     seatNumber = SeatNumber;
     seatAvail = SeatAvail;
 }
-Seat::Seat(int SeatNumber, bool SeatAvail, BasicInfo a) {
+Seat::Seat(int SeatNumber, bool SeatAvail, BasicInfo& a) {
     seatNumber = SeatNumber;
     seatAvail = SeatAvail;
     seatInfo = a;
@@ -29,7 +31,7 @@ int Seat::getSeatNumber() {
 bool Seat::getSeatAvail() {
     return seatAvail;
 }
-BasicInfo Seat::getSeatInfo() {
+BasicInfo& Seat::getSeatInfo() {
     return seatInfo;
 }
 void Seat::setSeatNumber(int a) {
@@ -38,10 +40,11 @@ void Seat::setSeatNumber(int a) {
 void Seat::setSeatAvail(bool a) {
     seatAvail = a;
 }
-void Seat::setSeatInfo(BasicInfo a) {
+void Seat::setSeatInfo(BasicInfo& a) {
     seatInfo = a;
 }
 string Seat::toString() {
+    int spacing = 10;
     stringstream b;
     string sAvail;
     if (seatAvail == true) {
@@ -49,7 +52,7 @@ string Seat::toString() {
     } else {
         sAvail = "No";
     }
-    b <<  "Passenger Name: " << seatInfo.getName() << ", Contact: " << seatInfo.getPhoneNumber() << ", Address: " << seatInfo.getAddress() <<", Seat No." << seatNumber << ", Availiblility: " << sAvail ;
+    b <<  "Passenger Name: " << seatInfo.getName() << setw(spacing)  << ", Contact: " << seatInfo.getPhoneNumber() << setw(spacing) << ", Address: " << seatInfo.getAddress() << setw(spacing) << ", Seat No." << seatNumber << setw(spacing) << ", Availiblility: " << sAvail ;
     
     return b.str();
 }

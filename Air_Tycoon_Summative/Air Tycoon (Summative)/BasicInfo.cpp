@@ -7,7 +7,7 @@
 //
 
 #include "BasicInfo.hpp"
-
+#include <sstream>
 
 using namespace std;
 
@@ -36,3 +36,11 @@ void BasicInfo::setPhoneNumber(string a) {
     phoneNumber = a;
 }
 
+string BasicInfo::toString() {
+    stringstream a;
+    
+    a << name << " " << address << " " << phoneNumber << endl;
+    
+    return a.str();
+    
+}

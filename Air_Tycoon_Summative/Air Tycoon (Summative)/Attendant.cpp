@@ -5,6 +5,7 @@
 //  Created by - on 2017/04/18.
 //  Copyright © 2017 Eddie of the House of Ren. All rights reserved.
 //
+#include <iostream>
 
 #include "Attendant.hpp"
 #include <sstream>
@@ -14,17 +15,19 @@ using namespace std;
 string createInfoName();
 string createAddress();
 string createPhoneNumber();
+void insertion_sort (string arr[], int arr2[], int length);
 
+
+//Attendant::Attendant() {
+//   
+//    
+//}
 Attendant::Attendant() {
-   
-    
-}
-Attendant::Attendant(int TicketSales) {
-    ticketSales = TicketSales;
+    //ticketSales = TicketSales;
     
     srand(static_cast<uint32_t>(time(0)));
     for (int x = 0; x < ROUTES_NUM; x++) {
-        routes[x] = Flight(routeDestinations[rand()%10], x);
+        routes[x] = Flight(routeDestinations[rand()%10], x+1);
     } //Creates all the flights with a capacity of 10 passengers each
     
     for (int x = 0; x < PASSENGER_NUM; x++) {
@@ -32,7 +35,7 @@ Attendant::Attendant(int TicketSales) {
         a.setName(createInfoName());
         a.setAddress(createAddress());
         a.setPhoneNumber(createPhoneNumber());
-        
+        cout << "Initializing customer "<<a.toString() ;
         customers[x] = Passenger(a, -1, routes[ROUTES_NUM], routeDestinations[rand()%5]);
     } //Creates all the passengers to be flown
     
@@ -61,16 +64,30 @@ string createPhoneNumber() {
 int Attendant::getTicketSales() {
     return ticketSales;
 }
+Passenger& Attendant::getCustomers(int a) {
+    return customers[a];
+}
+Flight& Attendant::getRoutes(int a) {
+    return routes[a];
+}
 void Attendant::setTicketSales(int a) {
     ticketSales = a;
 }
+void Attendant::setCustomers(Passenger& a, int b) {
+    customers[b] = a;
+}
+void Attendant::setRoutes(Flight& a, int b) {
+    routes[b] = a;
+}
+
+
 void Attendant::addTicketSale() {
     ticketSales++;
 }
 void Attendant::cancelTicketSale() {
     ticketSales--;
 }
-string Attendant::getRoutes() {
+string Attendant::displayRoutes() {
     stringstream a;
     
     return a.str();
@@ -126,15 +143,43 @@ string Attendant::displayAllCustomerByAlphabeticOrder(Flight a) {
         passengerNames[x] = a.getFlightSeat(x).getSeatInfo().getName();
         passengerNamesOrder[x] = x;
     }
-    
+    insertion_sort(passengerNames,passengerNamesOrder, SEAT_NUM);
+    for (int x = 0; x < SEAT_NUM; x++) {
+        b << a.getFlightSeat(passengerNamesOrder[x]).toString() << endl;
+    }
     return b.str();
-}
+} //Not fully tested yet, may not work
+
 void Attendant::cancelFlight(Flight& a) {
     
 }
 void Attendant::reaccomodatePassengers(Flight& a)  {
     
 }
+
+
+void insertion_sort (string arr[], int arr2[], int length){
+    int j;
+    string temp;
+    int temp2;
+    for (int i = 0; i < length; i++){
+        j = i;
+        while (j > 0 && arr[j] < arr[j-1]){
+            temp = arr[j];
+            arr[j] = arr[j-1];
+            arr[j-1] = temp;
+            temp2 = arr2[j];
+            arr2[j] = arr2[j-1];
+            arr2[j-1] = temp2;
+            j--;
+        }
+    }
+}
+
+
+
+
+
 
 
 

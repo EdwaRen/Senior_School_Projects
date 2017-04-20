@@ -5,7 +5,8 @@
 //  Created by - on 2017/04/12.
 //  Copyright © 2017 Eddie of the House of Ren. All rights reserved.
 //
-
+#include <iostream>
+#include <iomanip>
 #include "Flight.hpp"
 #include <string>
 #include <sstream>
@@ -15,7 +16,7 @@ Flight::Flight() {
     for (int x = 0; x < SEAT_NUM; x++) {
         Seat a;
         BasicInfo b;
-        a = Seat((FLIGHT_TAG*100) +1, true, b);
+        a = Seat((1*100) +1, true, b);
         flightSeats[x] = a;
     }
 }
@@ -26,6 +27,7 @@ Flight::Flight(string destination, int flightTag) {
         Seat a;
         BasicInfo b;
         a = Seat((FLIGHT_TAG*100) +x, true, b);
+        cout << "Flight tag: " << flightTag << endl;
         flightSeats[x] = a;
     }
 }
@@ -56,7 +58,7 @@ string Flight::displayPassengerInfo() {
     a << "Passengers: " << endl;
     for (int x = 0; x < SEAT_NUM; x++) {
         if (flightSeats[x].getSeatAvail() == false) {
-            a << "    Name: " << flightSeats[x].getSeatInfo().getName() << ", Address: " << flightSeats[x].getSeatInfo().getAddress() << ", Phone Number: " << flightSeats[x].getSeatInfo().getPhoneNumber();
+            a << "    Name: " << flightSeats[x].getSeatInfo().getName() << setw(15) << ", Address: " << flightSeats[x].getSeatInfo().getAddress() << setw(15) << ", Phone Number: " << setw(15) << flightSeats[x].getSeatInfo().getPhoneNumber();
         }
     }
     return a.str();

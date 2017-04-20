@@ -21,13 +21,13 @@ private:
 public:
     Seat();
     Seat(int SeatNumber, bool SeatAvail);
-    Seat(int SeatNumber, bool SeatAvail, BasicInfo a);
+    Seat(int SeatNumber, bool SeatAvail, BasicInfo& a);
     int getSeatNumber();
     bool getSeatAvail();
-    BasicInfo getSeatInfo();
+    BasicInfo& getSeatInfo();
     void setSeatNumber(int a);
     void setSeatAvail(bool a);
-    void setSeatInfo(BasicInfo a);
+    void setSeatInfo(BasicInfo& a);
     string toString();
     
 };
