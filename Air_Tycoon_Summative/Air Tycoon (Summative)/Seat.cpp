@@ -44,7 +44,8 @@ void Seat::setSeatInfo(BasicInfo& a) {
     seatInfo = a;
 }
 string Seat::toString() {
-    int spacing = 10;
+    int spacing = 20;
+    int seatSpacing = 8;
     stringstream b;
     string sAvail;
     if (seatAvail == true) {
@@ -52,7 +53,7 @@ string Seat::toString() {
     } else {
         sAvail = "No";
     }
-    b <<  "Passenger Name: " << seatInfo.getName() << setw(spacing)  << ", Contact: " << seatInfo.getPhoneNumber() << setw(spacing) << ", Address: " << seatInfo.getAddress() << setw(spacing) << ", Seat No." << seatNumber << setw(spacing) << ", Availiblility: " << sAvail ;
+    b <<"Seat No." << left <<setw(seatSpacing) << setfill(' ') << seatNumber  << "Availiblility: " << left <<setw(seatSpacing) << setfill(' ') << sAvail <<  "Passenger Name: " << left <<setw(spacing) << setfill(' ') << seatInfo.getName()   << "Contact: " << left <<setw(spacing) << setfill(' ') << seatInfo.getPhoneNumber() << "Address: " << left <<setw(spacing) << setfill(' ') << seatInfo.getAddress() ;
     
     return b.str();
 }

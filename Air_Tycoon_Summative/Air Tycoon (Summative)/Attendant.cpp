@@ -26,17 +26,23 @@ Attendant::Attendant() {
     //ticketSales = TicketSales;
     
     srand(static_cast<uint32_t>(time(0)));
+    //routes[ROUTES_NUM] = Flight("UNBOOKED", ROUTES_NUM+1);
+
+    routes[ROUTES_NUM].setFlightDestination("UNBOOKED");
     for (int x = 0; x < ROUTES_NUM; x++) {
         routes[x] = Flight(routeDestinations[rand()%10], x+1);
+        
     } //Creates all the flights with a capacity of 10 passengers each
+    
     
     for (int x = 0; x < PASSENGER_NUM; x++) {
         BasicInfo a;
         a.setName(createInfoName());
         a.setAddress(createAddress());
         a.setPhoneNumber(createPhoneNumber());
-        cout << "Initializing customer "<<a.toString() ;
-        customers[x] = Passenger(a, -1, routes[ROUTES_NUM], routeDestinations[rand()%5]);
+        a.setCustomerID(x);
+        customers[x] = Passenger(a, -1, routes[ROUTES_NUM], routeDestinations[rand()%5], x);
+        
     } //Creates all the passengers to be flown
     
 }
@@ -94,22 +100,27 @@ string Attendant::displayRoutes() {
 }
 
 void Attendant::reserveSeat(Passenger& a, Flight& b, int c) {
-    
+    ticketSales++;
     for (int x = 0; x < SEAT_NUM; x++) {
         if (b.getFlightSeat(x).getSeatAvail() == true) {
             b.getFlightSeat(c).setSeatAvail(false);
             b.getFlightSeat(c).setSeatInfo(a.getMyInfo());
             a.setMyFlight(b);
+            cout << "Reserved seat for Passenger No. "<<a.getMyID() << ", " << a.getMyInfo().toString();
+            break;
         }
     }
 }
-void Attendant::cancelSeat(Passenger& a, Flight& b, int c) {
+void Attendant::cancelSeat(Passenger& a) {
+    ticketSales--;
     int seatSerialNum = 0;
     BasicInfo basicInfo;
-    b.getFlightSeat(c).setSeatAvail(true);
-    b.getFlightSeat(c).setSeatInfo(basicInfo);
+    a.getMyFlight().getFlightSeat(a.getMySeatNum()).setSeatAvail(true);
+    a.getMyFlight().getFlightSeat(a.getMySeatNum()).setSeatInfo(basicInfo);
+
     a.setMySeatNum(-1);
-    
+    a.setMyFlight(routes[ROUTES_NUM]);
+    cout << "Canceled seat for Passenger No. "<<a.getMyID() << ", " << a.getMyInfo().toString();
     //Setting the passenger's seat number to -1 indicates he has nowhere to sit and thus will not board the plane
 }
 
@@ -122,14 +133,26 @@ string Attendant::displayNextCustomer() {
     stringstream a;
     for (int x = 0; x < PASSENGER_NUM; x++) {
         if (customers[x].getMySeatNum() == -1) {
-            customers[x].toString();
+            a << customers[x].toString() << endl;
             break;
         }
     }
     return a.str();
 }
+string Attendant::displayUnbookedCustomers() {
+    stringstream a;
+    a << "Displaying Unbooked Customers: "<< endl;
+    for (int x = 0; x < CUSTOMER_AMOUNT; x ++) {
+        if (customers[x].getMySeatNum() == -1) {
+            a << customers[x].toString() << endl;
+        }
+    }
+    return a.str();
+    
+}
 string Attendant::displayAllCustomerBySeatOrder(Flight a) {
     stringstream b;
+    b << "\nFlight to: " <<a.getFlightDestination() << endl;
     for (int x = 0; x < SEAT_NUM; x++) {
         b << a.getFlightSeat(x).toString() << endl;
     }
@@ -151,9 +174,41 @@ string Attendant::displayAllCustomerByAlphabeticOrder(Flight a) {
 } //Not fully tested yet, may not work
 
 void Attendant::cancelFlight(Flight& a) {
-    
+    for (int x = 0; x < SEAT_NUM; x++) {
+        BasicInfo b;
+        
+        int customnerNum = a.getFlightSeat(x).getSeatInfo().getCustomerID();
+        //cout << "Customer num : "<<customnerNum << endl;
+        customers[customnerNum].setMyFlight(routes[ROUTES_NUM]);
+        customers[customnerNum].setMySeatNum(-1);
+        
+        a.getFlightSeat(x).setSeatAvail(true);
+        a.getFlightSeat(x).setSeatInfo(b);
+
+
+    }
 }
-void Attendant::reaccomodatePassengers(Flight& a)  {
+
+void Attendant::autoAssignPassengers() {
+    srand(static_cast<uint32_t>(time(0)));
+    int flightNumCount = 0;
+    int seatNumCount = 0;
+    
+    for (int x = 0; x < CUSTOMER_AMOUNT; x++) {
+        if (rand()%100 <= 80) {
+            reserveSeat(customers[x], routes[flightNumCount], seatNumCount);
+            cout << "loop: " << x << endl;
+            customers[x].setMySeatNum(seatNumCount);
+            
+        }
+        seatNumCount++;
+        if (seatNumCount >= PLANE_SEATS) {
+            seatNumCount = 0;
+            flightNumCount++;
+        } else if (flightNumCount == FLIGHTS_AMOUNT) {
+            break;
+        }
+    }
     
 }
 

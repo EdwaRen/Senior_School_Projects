@@ -11,10 +11,11 @@
 
 #include <stdio.h>
 #include "BasicInfo.hpp"
+#include "Constants.h"
 
 class Seat:public BasicInfo {
 private:
-    int SEAT_NUM = 10;
+    int SEAT_NUM = PLANE_SEATS;
     BasicInfo seatInfo;
     int seatNumber;
     bool seatAvail = true;

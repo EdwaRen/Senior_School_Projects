@@ -24,17 +24,20 @@ private:
     string name;
     string address;
     string phoneNumber;
+    int customerID;
     
 public:
     BasicInfo();
-    BasicInfo(string Name, string Address, string PhoneNumber);
+    BasicInfo(string Name, string Address, string PhoneNumber, int customerID);
     string getName();
     string getAddress();
     string getPhoneNumber();
+    int getCustomerID();
     
     void setName(string a);
     void setAddress(string a);
     void setPhoneNumber(string a);
+    void setCustomerID(int myID);
     
     string toString();
 

@@ -15,11 +15,12 @@ using namespace std;
 
 Passenger::Passenger() {}
 
-Passenger::Passenger(BasicInfo& a, int pSeatNum, Flight& pFlight, string pPreference) {
+Passenger::Passenger(BasicInfo& a, int pSeatNum, Flight& pFlight, string pPreference, int myIDNum) {
     myInfo = a;
     mySeatNum  = pSeatNum;
     myFlight = pFlight;
     myPreference = pPreference;
+    myID = myIDNum;
 
 }
 string Passenger::getMyPreference() {
@@ -36,6 +37,9 @@ BasicInfo& Passenger::getMyInfo() {
 }
 int Passenger::getMySeatNum() {
     return mySeatNum;
+}
+int Passenger::getMyID() {
+    return myID;
 }
 void Passenger::setMyPreference(string a) {
     myPreference = a;
@@ -55,9 +59,18 @@ void Passenger::setMyInfo(BasicInfo& a) {
 void Passenger::setMySeatNum(int a) {
     mySeatNum = a;
 }
+void Passenger::setMyID(int a) {
+    myID = a;
+}
 string Passenger::toString() {
     stringstream a;
-    a << "     Name: " << myInfo.getName() << ", Phone Number: " << myInfo.getPhoneNumber() << ", Address: " << myInfo.getPhoneNumber() << ", Seat Number: " <<myFlight.getFlightSeat(mySeatNum).getSeatNumber() << ", Flight Destination: " << myFlight.getFlightDestination() << ", Preferred Destination: " << myPreference;
+    int localSeatNum = -1;
+    if (mySeatNum != -1) {
+        myFlight.getFlightSeat(mySeatNum);
+        localSeatNum = myFlight.getFlightSeat(mySeatNum).getSeatNumber();
+    }
+    
+    a << "      Passenger No. " << myID<< ", Name: " << myInfo.getName() << ", Phone Number: " << myInfo.getPhoneNumber() << ", Address: " << myInfo.getPhoneNumber() << ", Seat Number: " << localSeatNum << ", Flight Destination: " << myFlight.getFlightDestination() << ", Preferred Destination: " << myPreference;
     return a.str();
 }
 

@@ -12,10 +12,11 @@
 using namespace std;
 
 BasicInfo::BasicInfo() { }
-BasicInfo::BasicInfo(string Name, string Address, string PhoneNumber) {
+BasicInfo::BasicInfo(string Name, string Address, string PhoneNumber, int myID) {
     name = Name;
     address = Address;
     phoneNumber = PhoneNumber;
+    customerID = myID;
 }
 string BasicInfo::getAddress() {
     return address;
@@ -26,6 +27,10 @@ string BasicInfo::getName() {
 string BasicInfo::getPhoneNumber() {
     return phoneNumber;
 }
+int BasicInfo::getCustomerID() {
+    return customerID;
+}
+
 void BasicInfo::setName(string a) {
     name = a;
 }
@@ -35,11 +40,14 @@ void BasicInfo::setAddress(string a) {
 void BasicInfo::setPhoneNumber(string a) {
     phoneNumber = a;
 }
+void BasicInfo::setCustomerID(int myID) {
+    customerID = myID;
+}
 
 string BasicInfo::toString() {
     stringstream a;
     
-    a << name << " " << address << " " << phoneNumber << endl;
+    a << name << " - " << address << " - " << phoneNumber << " - ID: " << customerID << endl;
     
     return a.str();
     

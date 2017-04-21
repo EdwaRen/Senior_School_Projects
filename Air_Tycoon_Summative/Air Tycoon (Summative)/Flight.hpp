@@ -16,7 +16,7 @@ class Flight {
     
 private:
     int FLIGHT_TAG = 0;
-    int SEAT_NUM = 10;
+    int SEAT_NUM = PLANE_SEATS;
     Seat *flightSeats = new Seat[SEAT_NUM];
     string flightDestination;
     
@@ -31,6 +31,13 @@ public:
     string displayPassengerInfo();
 
 };
+
+
+
+
+
+
+
 
 
 #endif /* Flight_hpp */

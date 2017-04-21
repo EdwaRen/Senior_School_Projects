@@ -27,7 +27,6 @@ Flight::Flight(string destination, int flightTag) {
         Seat a;
         BasicInfo b;
         a = Seat((FLIGHT_TAG*100) +x, true, b);
-        cout << "Flight tag: " << flightTag << endl;
         flightSeats[x] = a;
     }
 }

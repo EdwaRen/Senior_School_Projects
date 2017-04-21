@@ -10,7 +10,9 @@
 #define Constants_h
 
 
-int CUSTOMER_AMOUNT = 10;
-int FLIGHTS_AMOUNT = 3;
+
+static int CUSTOMER_AMOUNT = 23;
+static int PLANE_SEATS = 3;
+static int FLIGHTS_AMOUNT = 3;
 
 #endif /* Constants_h */

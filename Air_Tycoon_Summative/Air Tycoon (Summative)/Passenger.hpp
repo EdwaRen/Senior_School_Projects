@@ -13,6 +13,7 @@
 
 #include "Seat.hpp"
 #include "Flight.hpp"
+#include "Constants.h"
 
 
 class Flight;
@@ -23,25 +24,28 @@ using namespace std;
 class Passenger : public BasicInfo{
     
 private:
-    int SEAT_NUM = 10;
+    int SEAT_NUM = PLANE_SEATS;
     BasicInfo myInfo;
+    int myID = -1;
     int mySeatNum; //Used to access the passenger's seat from the flight's seat array at position mySeatNum
     Flight myFlight;
     string myPreference; //This variable is an optional for the player, there are repercussions if the attendant ignores the passenger's preference
     
 public:
     Passenger();
-    Passenger(BasicInfo& a, int pSeatNum, Flight& pFlight, string pPreference);
+    Passenger(BasicInfo& a, int pSeatNum, Flight& pFlight, string pPreference, int myIDNum);
     string getMyPreference();
     Seat& getMySeat();
     BasicInfo& getMyInfo();
     Flight& getMyFlight();
     int getMySeatNum();
+    int getMyID();
     void setMyPreference(string a);
     void setMySeat(int b);
     void setMyFlight(Flight& a); //Also the buy ticket function, needs to be called in conjunction with setMySeat due to lazy programming
     void setMyInfo(BasicInfo& a);
     void setMySeatNum(int a);
+    void setMyID(int a);
     string toString();
 
 };
