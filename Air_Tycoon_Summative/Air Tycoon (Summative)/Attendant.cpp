@@ -212,6 +212,16 @@ void Attendant::autoAssignPassengers() {
     
 }
 
+string Attendant::displayAllInfoBySeatOrder() {
+    stringstream a;
+    
+    for (int x = 0; x < ROUTES_NUM; x++) {
+        a << displayAllCustomerBySeatOrder(routes[x]) << endl;
+    }
+    
+    return a.str();
+}
+
 
 void insertion_sort (string arr[], int arr2[], int length){
     int j;

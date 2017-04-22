@@ -21,15 +21,12 @@ int main(int argc, const char * argv[]) {
     
     e.autoAssignPassengers();
 
-
-    for (int x = 0; x < FLIGHTS_AMOUNT; x++) {
-        cout << "\n" << x << endl;
-        cout << e.displayAllCustomerBySeatOrder(e.getRoutes(x)) << endl;
-    } //Displays the customer list for all flights
     
 
     cout << endl << e.displayUnbookedCustomers() << endl;
     cout << "\n"<<e.displayNextCustomer() << endl;
+    
+    cout << e.displayAllInfoBySeatOrder() << endl;
     
     std::cout << "\nHello, World!\n";
     return 0;

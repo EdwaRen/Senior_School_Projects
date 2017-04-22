@@ -45,6 +45,7 @@ public:
     string displayUnbookedCustomers();
     string displayAllCustomerBySeatOrder(Flight a);
     string displayAllCustomerByAlphabeticOrder(Flight a);
+    string displayAllInfoBySeatOrder();
     void cancelFlight(Flight& a);    
     void autoAssignPassengers();
     
