@@ -57,7 +57,7 @@ string Flight::displayPassengerInfo() {
     a << "Passengers: " << endl;
     for (int x = 0; x < SEAT_NUM; x++) {
         if (flightSeats[x].getSeatAvail() == false) {
-            a << "    Name: " << flightSeats[x].getSeatInfo().getName() << setw(15) << ", Address: " << flightSeats[x].getSeatInfo().getAddress() << setw(15) << ", Phone Number: " << setw(15) << flightSeats[x].getSeatInfo().getPhoneNumber();
+            a << "    Name: " << flightSeats[x].getSeatInfo().getName() << setw(15) << ", Address: " << flightSeats[x].getSeatInfo().getAddress() << setw(15) << ", Phone Number: " << setw(15) << flightSeats[x].getSeatInfo().getPhoneNumber() << endl;
         }
     }
     return a.str();

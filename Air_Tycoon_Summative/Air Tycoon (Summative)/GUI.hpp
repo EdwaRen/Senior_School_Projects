@@ -10,5 +10,24 @@
 #define GUI_hpp
 
 #include <stdio.h>
+#include "Seat.hpp"
+#include "Flight.hpp"
+#include "Passenger.hpp"
+#include "Constants.h"
+#include "Attendant.hpp"
+
+class GUI {
+    
+private:
+    Attendant myAttendant;
+public:
+    GUI();
+    //void setConstants();
+    int guiController();
+    
+};
+
+
+
 
 #endif /* GUI_hpp */

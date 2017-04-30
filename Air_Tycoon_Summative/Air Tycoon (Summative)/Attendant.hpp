@@ -17,7 +17,7 @@
 
 class Attendant {
 private:
-    int ROUTES_NUM = 3;
+    int ROUTES_NUM = FLIGHTS_AMOUNT;
     int SEAT_NUM = PLANE_SEATS;
     int PASSENGER_NUM = CUSTOMER_AMOUNT;
     Flight *routes = new Flight[ROUTES_NUM+1];
@@ -28,27 +28,29 @@ public:
     
     Attendant();
     Attendant(int TicketSales);
-    int getTicketSales();
-    Passenger& getCustomers(int a);
-    Flight& getRoutes(int a);
-    void setTicketSales(int a);
-    void setCustomers(Passenger& a, int b);
-    void setRoutes(Flight& a, int b);
+    int getTicketSales();                   //l
+    Passenger& getCustomers(int a);         //Not needed for GUI
+    Flight& getRoutes(int a);               //Not needed for GUI
+    void setTicketSales(int a);             //m
+    void setCustomers(Passenger& a, int b); //Not needed for GUI
+    void setRoutes(Flight& a, int b);       //Not needed for GUI
     
-    void addTicketSale();
-    void cancelTicketSale();
-    string displayRoutes();
-    void reserveSeat(Passenger& a, Flight& b, int c);
-    void cancelSeat(Passenger& a);
-    string displayMyFlight(Flight a);
-    string displayNextCustomer();
-    string displayUnbookedCustomers();
-    string displayAllCustomerBySeatOrder(Flight a);
-    string displayAllCustomerByAlphabeticOrder(Flight a);
-    string displayAllInfoBySeatOrder();
-    void cancelFlight(Flight& a);    
-    void autoAssignPassengers();
+    void addTicketSale();                           //Automatically called within another function
+    void cancelTicketSale();                        //Automatically called within another function
+    string displayRoutes();                             //a)
+    void reserveSeat(Passenger& a, Flight& b, int c);   //b)
+    void cancelSeat(Passenger& a);                      //c)
+    string displayMyFlight(Flight a);                   //d)
+    string displayNextCustomer();                       //e)
+    string displayUnbookedCustomers();                  //f)
+    string displayAllCustomerBySeatOrder(Flight a);         //g)
+    string displayAllCustomerByAlphabeticOrder(Flight a);   //h)
+    string displayAllInfoBySeatOrder();                     //i)
+    void cancelFlight(Flight& a);                           //j)
+    void autoAssignPassengers();                            //k)
     
+    
+    //z For exit
     
 };
 

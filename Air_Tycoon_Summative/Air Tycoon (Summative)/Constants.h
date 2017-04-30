@@ -11,8 +11,8 @@
 
 
 
-static int CUSTOMER_AMOUNT = 23;
-static int PLANE_SEATS = 3;
+static int CUSTOMER_AMOUNT = 25;
+static int PLANE_SEATS = 10;
 static int FLIGHTS_AMOUNT = 3;
 
 #endif /* Constants_h */

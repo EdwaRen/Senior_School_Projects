@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F15FBA01EAE36C300A45BDA /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F15FB9E1EAE36C300A45BDA /* GUI.cpp */; };
 		1F1645B91E9FF63800CA637C /* Passenger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F1645B71E9FF63800CA637C /* Passenger.cpp */; };
 		1FA8E5031EA643E800816002 /* Attendant.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8E5011EA643E800816002 /* Attendant.cpp */; };
 		1FBF80801E9EA48000A72444 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF807F1E9EA48000A72444 /* main.cpp */; };
@@ -28,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F15FB9E1EAE36C300A45BDA /* GUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI.cpp; sourceTree = "<group>"; };
+		1F15FB9F1EAE36C300A45BDA /* GUI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GUI.hpp; sourceTree = "<group>"; };
 		1F1645B71E9FF63800CA637C /* Passenger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Passenger.cpp; sourceTree = "<group>"; };
 		1F1645B81E9FF63800CA637C /* Passenger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Passenger.hpp; sourceTree = "<group>"; };
 		1FA8E5011EA643E800816002 /* Attendant.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Attendant.cpp; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 				1F1645B81E9FF63800CA637C /* Passenger.hpp */,
 				1FA8E5011EA643E800816002 /* Attendant.cpp */,
 				1FA8E5021EA643E800816002 /* Attendant.hpp */,
+				1F15FB9E1EAE36C300A45BDA /* GUI.cpp */,
+				1F15FB9F1EAE36C300A45BDA /* GUI.hpp */,
 				1FA8E52C1EA7CDDD00816002 /* Constants.h */,
 			);
 			path = "Air Tycoon (Summative)";
@@ -149,6 +154,7 @@
 			files = (
 				1F1645B91E9FF63800CA637C /* Passenger.cpp in Sources */,
 				1FBF808B1E9EA74900A72444 /* Seat.cpp in Sources */,
+				1F15FBA01EAE36C300A45BDA /* GUI.cpp in Sources */,
 				1FBF808E1E9EAE5E00A72444 /* Flight.cpp in Sources */,
 				1FBF80881E9EA4B300A72444 /* BasicInfo.cpp in Sources */,
 				1FBF80801E9EA48000A72444 /* main.cpp in Sources */,
