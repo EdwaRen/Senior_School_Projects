@@ -15,10 +15,10 @@
 class Flight {
     
 private:
-    int FLIGHT_TAG = 0;
+    int FLIGHT_TAG = 0; //This flight's serial number in the routes[] array of the attendant class
     int SEAT_NUM = PLANE_SEATS;
     Seat *flightSeats = new Seat[SEAT_NUM];
-    string flightDestination;
+    string flightDestination; //The destination for this flight. This can be preferably matched with the passenger's preffered destination
     
 public:
     Flight();
@@ -27,8 +27,8 @@ public:
     string getFlightDestination();
     void setFlightSeat(Seat& a, int b);
     void setFlightDestination(string a);
-    string displaySeatsAvailible();
-    string displayPassengerInfo();
+    string displaySeatsAvailible(); //Displays availibility of seats
+    string displayPassengerInfo();  //Displays the info of all 10 passengers
 
 };
 

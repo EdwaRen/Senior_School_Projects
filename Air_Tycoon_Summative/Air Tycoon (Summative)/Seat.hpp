@@ -15,9 +15,9 @@
 
 class Seat:public BasicInfo {
 private:
-    int SEAT_NUM = PLANE_SEATS;
+    int SEAT_NUM = PLANE_SEATS; //PLANE_SEATS can be found in constants.h
     BasicInfo seatInfo;
-    int seatNumber;
+    int seatNumber; //'unique' seatID for every seat instantiated that can also be extracted for its associated flight.
     bool seatAvail = true;
 public:
     Seat();
@@ -29,7 +29,7 @@ public:
     void setSeatNumber(int a);
     void setSeatAvail(bool a);
     void setSeatInfo(BasicInfo& a);
-    string toString();
+    string toString(); //Outputs all the seat information in a string
     
 };
 

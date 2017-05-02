@@ -20,16 +20,9 @@ int main(int argc, const char * argv[]) {
     cout << "Welcome to Fight Club Airlines! With our unprecedented services, you will truly enjoy flying the friendly skies!" << endl << endl;
     cout << "Please read the instructions manuel and input to start the program" << endl;
     GUI a;
-    //a.setConstants();
+    
     while (a.guiController() == 0) {}
-    //e.autoAssignPassengers();
     
-    
-
-    //cout << endl << e.displayUnbookedCustomers() << endl;
-    //cout << "\n"<<e.displayNextCustomer() << endl;
-    
-    //cout << e.displayAllInfoBySeatOrder() << endl;
     
     std::cout << "\nHello, World!\n";
     return 0;

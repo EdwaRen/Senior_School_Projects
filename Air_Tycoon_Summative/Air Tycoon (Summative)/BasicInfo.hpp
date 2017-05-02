@@ -19,7 +19,7 @@ using namespace std;
 
 class BasicInfo {
 
-    
+    //Most of the code here should be self-explanatory
 private:
     string name;
     string address;
@@ -39,7 +39,7 @@ public:
     void setPhoneNumber(string a);
     void setCustomerID(int myID);
     
-    string toString();
+    string toString(); //Outputs the information in a string format
 
     
 };

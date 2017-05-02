@@ -53,6 +53,8 @@ string Seat::toString() {
     } else {
         sAvail = "No";
     }
+    
+    //Displays the information in a table format for a more aesthetically pleasing experience
     b <<"Seat No." << left <<setw(seatSpacing) << setfill(' ') << seatNumber  << "Availiblility: " << left <<setw(seatSpacing) << setfill(' ') << sAvail <<  "Passenger Name: " << left <<setw(spacing) << setfill(' ') << seatInfo.getName()   << "Contact: " << left <<setw(spacing) << setfill(' ') << seatInfo.getPhoneNumber() << "Address: " << left <<setw(spacing) << setfill(' ') << seatInfo.getAddress() ;
     
     return b.str();

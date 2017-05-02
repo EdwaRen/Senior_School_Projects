@@ -16,6 +16,8 @@ Flight::Flight() {
     for (int x = 0; x < SEAT_NUM; x++) {
         Seat a;
         BasicInfo b;
+        
+        //Creates the seat of the flight. Since there is not specified flightTag, it is set to 1. All seats therefore also have the same seatID number
         a = Seat((1*100) +1, true, b);
         flightSeats[x] = a;
     }
@@ -25,8 +27,12 @@ Flight::Flight(string destination, int flightTag) {
     flightDestination = destination;
     for (int x = 0; x < SEAT_NUM; x++) {
         Seat a;
+        
+        //creates a blank BasicInfo object so that the seat has no relevant information.
         BasicInfo b;
-        a = Seat((FLIGHT_TAG*100) +x, true, b);
+        
+        //The for loop above ensures the following code produces a unique seatID for every seat on the flight.
+        a = Seat((FLIGHT_TAG*100) +x, true, b); //
         flightSeats[x] = a;
     }
 }
@@ -53,6 +59,8 @@ string Flight::displaySeatsAvailible() {
     
 }
 string Flight::displayPassengerInfo() {
+    //This function only displays passenger info by seat order. Another function in the attendant class can display by name alphabetically.
+    
     stringstream a;
     a << "Passengers: " << endl;
     for (int x = 0; x < SEAT_NUM; x++) {
