@@ -235,7 +235,7 @@ bool DeckOfCards::MoreCards() {
 }
 
 Dealer:: Dealer() {
-    cout << "Dealer: Love. Game. Intuition. Play the cards with spades to start\n" << endl;
+    cout << "\n" << endl;
     myDeckObj.DeckConstruct(52);
     myDeckObj.shuffle(52);
     //cout << "Heres the deck: \n"<<myDeckObj.DeckCardString(52) << endl;
@@ -774,6 +774,11 @@ void Dealer::BetMoney() {
     cin >> playerbet;
     
     if (playerbet > money1 or playerbet < 0) {
+        if (playerbet < 0) {
+            cout << "You have successfully robbed the casino of $" << money1 << ". Come again!"<<  endl;
+        } else {
+            cout << "You have been kicked from the casino. " << endl;
+        }
         ThisIsTheEnd();
     } else if (playerbet > dealerbet) {
         

@@ -15,32 +15,32 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     
     Card a;
-    a = Card(4, 2);
-    cout << "hello" << endl;
-    cout << a.toString() << endl;
+  //  a = Card(4, 2);
+ //   cout << "hello" << endl;
+ //   cout << a.toString() << endl;
     
     DeckOfCards b;
     
     b.DeckConstruct(52);
-    cout << "hello1" << endl;
+ //   cout << "hello1" << endl;
 
-    cout << b.DeckCardString(52)<< endl;
+    //cout << b.DeckCardString(52)<< endl;
 
     
     b.shuffle(52);
     
     
     
-    cout << "hello2" << endl;
+    //cout << "hello2" << endl;
 
-    cout << b.DeckCardString(52);
+   // cout << b.DeckCardString(52);
     
-    cout << "nextCards" << endl;
+ //   cout << "nextCards" << endl;
 
     Card c;
-    cout << b.NextCard().toString() << endl;
-    cout << b.NextCard().toString() << endl;
-    cout << b.NextCard().toString() << endl;
+  //  cout << b.NextCard().toString() << endl;
+  //  cout << b.NextCard().toString() << endl;
+  //  cout << b.NextCard().toString() << endl;
     
     b.DeckDestruct();
 
@@ -52,13 +52,15 @@ int main(int argc, const char * argv[]) {
     cout << "RULEBOARD: All five cards are already dealt, just bet on the final match!" << endl;
     cout << "RULEBOARD: For ease of use (and easy testing) all the cards are displayed, including the dealer's" << endl;
     cout << "RULEBOARD: For two pairs and flush, high card only applies once. Ex: A flush with 2,3,4,5,K will tie a flush with 9,10,J,Q,K\n\n" << endl;
+    cout << "RULEBOARD: If you keep seeing 'There was a fold', that means you bet too much and the dealer has folded (or you bet too low)" << endl;
 
 
 
 
 
 
-    cout << "Dealer: A little gambling is fun when you're with me" << endl;
+
+    cout << "Dealer: Bonjour!" << endl;
     Dealer d;
     bool endGame = false;
     
@@ -83,7 +85,7 @@ int main(int argc, const char * argv[]) {
         int m2 = d.getMoney2();
         if (m1 <= 0) {
             cout << "You have been defeated" << endl;
-            cout << "Dealer: Can't read my, can't read my, no one can read my POKER FACE" << endl;
+            cout << "Dealer: :P" << endl;
             cout << "\nRestart? Y/N" << endl;
             char repeat;
             cin >> repeat;
@@ -93,7 +95,7 @@ int main(int argc, const char * argv[]) {
             }
         } else if (m2 <= 0){
             cout << "\nCongratulations! You have won!" << endl;
-            cout << "Dealer: You caught me bluffing" << endl;
+            cout << "Dealer: :'(" << endl;
             cout << "\nRestart? Y/N" << endl;
             char repeat;
             cin >> repeat;
@@ -106,6 +108,7 @@ int main(int argc, const char * argv[]) {
             char repeat;
             cin >> repeat;
             if (repeat == 'N') {
+                cout << "Dealer: Have a good day!" << endl;
                 d.ThisIsTheEnd();
                 endGame = true;
             }
