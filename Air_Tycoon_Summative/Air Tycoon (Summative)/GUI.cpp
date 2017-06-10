@@ -32,7 +32,7 @@ GUI::GUI() {
 //}
 
 int GUI::guiController() {
-    cout << "Please enter a letter from a-k to command the flight attendant, enter z to quit" << endl;
+    cout << "Please enter a letter from a-k to command the flight attendant, enter y for help menu, enter z to quit" << endl;
     string myIn;
     cin >> myIn;
     if (myIn == "a") {
@@ -93,7 +93,7 @@ int GUI::guiController() {
         
     } else if (myIn == "j") {
         cout << "Cancelling A Flight--> cancelFlight(Flight& a)" << endl;
-        cout << "Please enter a flight number form 0 to " << FLIGHTS_AMOUNT << endl;
+        cout << "Please enter a flight number form 0 to " << FLIGHTS_AMOUNT-1 << endl;
         int fNum = 0;
         cin >> fNum;
         myAttendant.cancelFlight(myAttendant.getRoutes(fNum));
@@ -114,10 +114,50 @@ int GUI::guiController() {
         cin >> tNum;
         myAttendant.setTicketSales(tNum);
         
+    } else if (myIn == "n") {
+        cout << "Adding Customers" << endl;
+        cout << "Please enter the desired number of extra customers" << endl;
+        int more;
+        cin >> more;
+        myAttendant.addCustomers(more);
+    
+        
+    } else if (myIn == "o") {
+        cout << "Adding Planes" << endl;
+        cout << "Please enter the desired number of extra planes" << endl;
+        int more;
+        cin >> more;
+        myAttendant.addPlane(more);
+        
+        
+    } else if (myIn == "q") {
+        cout << "Adding Seats" << endl;
+        cout << "Please enter the desired number of extra seats" << endl;
+        int more;
+        cin >> more;
+        myAttendant.addSeats(more);
+        
+        
     } else if (myIn == "z") {
-        cout << "Thank you for flying with us!" << endl;
+        cout << FLIGHTS_AMOUNT << " flights have crashed today due to a negligent air attendant." << endl;
         return 1; //Returns 1 to stop the loop
-    } 
+    } else if (myIn == "y") {
+        cout << "\nRemember to read the README file!!!\n" << endl;
+
+        cout << "string displayRoutes();                             		//a" << endl;
+        cout << "void reserveSeat(Passenger& a, Flight& b, int c);   		//b" << endl;
+        cout << "void cancelSeat(Passenger& a);                      		//c" << endl;
+        cout << "string displayMyFlight(Flight a);                   		//d" << endl;
+        cout << "string displayNextCustomer();                       		//e" << endl;
+        cout << "string displayUnbookedCustomers();                  		//f" << endl;
+        cout << "string displayAllCustomerBySeatOrder(Flight a);         	//g" << endl;
+        cout << "string displayAllCustomerByAlphabeticOrder(Flight a);   	//h" << endl;
+        cout << "string displayAllInfoBySeatOrder();                     	//i" << endl;
+        cout << "void cancelFlight(Flight& a);                           	//j" << endl;
+        cout << "void autoAssignPassengers();                           	//k" << endl;
+        cout << "int getTicketSales();                                      //l" << endl;
+        cout << "void setTicketSales(int a);                                //m" << endl;
+    }
     cout << "\n\n\n" << endl; //Makes separate commands more distinct
     return 0; //Returns 0 to continue looping
     

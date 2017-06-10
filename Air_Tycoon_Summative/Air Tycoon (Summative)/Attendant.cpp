@@ -197,7 +197,7 @@ string Attendant::displayAllCustomerByAlphabeticOrder(Flight a) {
 void Attendant::cancelFlight(Flight& a) {
     for (int x = 0; x < SEAT_NUM; x++) {
         BasicInfo b;
-        
+        if (a.getFlightSeat(x).getSeatAvail() == false) {
         int customnerNum = a.getFlightSeat(x).getSeatInfo().getCustomerID();
         //cout << "Customer num : "<<customnerNum << endl;
         customers[customnerNum].setMyFlight(routes[ROUTES_NUM]);
@@ -205,6 +205,7 @@ void Attendant::cancelFlight(Flight& a) {
         
         a.getFlightSeat(x).setSeatAvail(true);
         a.getFlightSeat(x).setSeatInfo(b);
+        }
 
 
     }
@@ -242,6 +243,48 @@ string Attendant::displayAllInfoBySeatOrder() {
     }
     
     return a.str();
+}
+
+void Attendant::addCustomers(int a) {
+    for (int x = CUSTOMER_AMOUNT; x < CUSTOMER_AMOUNT+a; x++) {
+        BasicInfo a;
+        a.setName(createInfoName());
+        a.setAddress(createAddress());
+        a.setPhoneNumber(createPhoneNumber());
+        a.setCustomerID(x);
+        customers[x] = Passenger(a, -1, routes[ROUTES_NUM], routeDestinations[rand()%5], x);
+        
+    }
+    CUSTOMER_AMOUNT += a;
+}
+
+void Attendant::addSeats(int a) {
+    
+    int FLIGHT_TAG = ROUTES_NUM;
+    string flightDestination = routeDestinations[rand()%10];
+    for (int x = 0; x < SEAT_NUM; x++) {
+        Seat a;
+        
+        //creates a blank BasicInfo object so that the seat has no relevant information.
+        BasicInfo b;
+        
+        //The for loop above ensures the following code produces a unique seatID for every seat on the flight.
+        a = Seat((FLIGHT_TAG*100) +x, true, b); //
+        flightSeats[x] = a;
+    }
+    
+    PLANE_SEATS += a;
+}
+
+void Attendant::addPlane(int a) {
+    
+    routes[ROUTES_NUM].setFlightDestination("UNBOOKED");
+    for (int x = ROUTES_NUM; x < ROUTES_NUM+a; x++) {
+        routes[x] = Flight(routeDestinations[rand()%10], x+1);
+        
+    }
+    ROUTES_NUM += a;
+    cout << routes[ROUTES_NUM-4].displayPassengerInfo() << " Test"<<  endl;
 }
 
 

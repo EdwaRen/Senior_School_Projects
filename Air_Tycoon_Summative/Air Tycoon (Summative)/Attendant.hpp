@@ -20,7 +20,7 @@ private:
     int ROUTES_NUM = FLIGHTS_AMOUNT;
     int SEAT_NUM = PLANE_SEATS;
     int PASSENGER_NUM = CUSTOMER_AMOUNT;
-    Flight *routes = new Flight[ROUTES_NUM+1];
+    Flight *routes = new Flight[ROUTES_NUM+3];
     Passenger *customers = new Passenger[PASSENGER_NUM];
     int ticketSales = 0;
     string routeDestinations[10] = {"Ottawa", "Toronto", "Windsor", "Waterloo", "Vancouver", "Saskatoon", "Calgary", "Mont-Royal", "Halifax", "Edmonton"};
@@ -48,6 +48,10 @@ public:
     string displayAllInfoBySeatOrder();                     //i)
     void cancelFlight(Flight& a);                           //j)
     void autoAssignPassengers();                            //k)
+    
+    void addCustomers(int a);                               //n)
+    void addPlane(int a);                                   //o)
+    void addSeats(int a);                                   //q)
     
     
     //z For exit

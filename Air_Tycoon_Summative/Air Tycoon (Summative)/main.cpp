@@ -16,7 +16,7 @@
 #include "GUI.hpp"
 
 
-int main(int argc, const char * argv[]) {
+int main() {
     cout << "Welcome to Fight Club Airlines! With our unprecedented services, you will truly enjoy flying the friendly skies!" << endl << endl;
     cout << "Please read the instructions manuel and input to start the program" << endl;
     GUI a;
